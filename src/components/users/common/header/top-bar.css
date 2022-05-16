@@ -1,0 +1,37 @@
+.topbar{
+    position: absolute;
+    top:0;
+    border-bottom: 1px solid white;
+    z-index: 10;
+}
+
+.topbar .social-bar{
+    list-style: none;
+    display: flex;
+    gap:1rem;
+    margin:0;
+    padding: 0;
+
+}
+
+.topbar .social-bar a{
+    color:white;
+}
+.topbar .contact-bar{
+    list-style: none;
+    display: flex;
+    gap:1rem;
+    margin:0;
+    padding: 0;
+}
+.topbar .contact-bar li{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+
+}
+
+.topbar .contact-bar li svg{
+    color:var(--color1);
+    font-size: 2rem;
+}
