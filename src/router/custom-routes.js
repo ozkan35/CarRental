@@ -1,6 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AdminDashboardPage from "../pages/admins/AdminDashboardPage";
+import AdminUsersEditPage from "../pages/admins/AdminUsersEditPage";
+import AdminUsersNewPage from "../pages/admins/AdminUsersNewPage";
+import AdminUsersPage from "../pages/admins/AdminUsersPage";
 import NotFoundPage from "../pages/common/NotFoundPage";
 import UnAuthorizedPage from "../pages/common/UnAuthorizedPage";
 import AboutPage from "../pages/users/AboutPage";
@@ -28,8 +31,10 @@ const CustomRoutes = () => {
           <Route path="admin">
             <Route index element={<ProtectedRoute isAdmin={true}><AdminTemplate><AdminDashboardPage/></AdminTemplate></ProtectedRoute>}/>
             <Route path="users">
-            <Route index element={<ProtectedRoute isAdmin={true}><AdminTemplate><AdminDashboardPage/></AdminTemplate></ProtectedRoute>}/>
-          </Route>
+              <Route index element={<ProtectedRoute isAdmin={true}><AdminTemplate><AdminUsersPage/></AdminTemplate></ProtectedRoute>}/>
+              <Route path=":userId" element={<ProtectedRoute isAdmin={true}><AdminTemplate><AdminUsersEditPage/></AdminTemplate></ProtectedRoute>}/>
+              <Route path="new" element={<ProtectedRoute isAdmin={true}><AdminTemplate><AdminUsersNewPage/></AdminTemplate></ProtectedRoute>}/>
+            </Route>
           </Route>
 
 
